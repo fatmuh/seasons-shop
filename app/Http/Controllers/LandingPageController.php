@@ -36,12 +36,16 @@ class LandingPageController extends Controller
     {
         $data = Product::findOrFail($id);
         $order_pcs = $request->order_pcs;
+        $merk_hp = $request->merk_hp;
+        $tipe_hp = $request->tipe_hp;
         $total_bayar = $data->price * $order_pcs;
 
         return view('landing.payment')->with([
             'data' => $data,
             'order_pcs' => $order_pcs,
             'total_bayar' => $total_bayar,
+            'merk_hp' => $merk_hp,
+            'tipe_hp' => $tipe_hp,
         ]);
     }
 
@@ -56,6 +60,8 @@ class LandingPageController extends Controller
             'users_id' => 'required',
             'product_id' => 'required',
             'order_pcs' => 'required',
+            'merk_hp' => 'required',
+            'tipe_hp' => 'required',
             'price_total' => 'required',
             'order_time' => 'required',
             'type_of_payment' => 'required',

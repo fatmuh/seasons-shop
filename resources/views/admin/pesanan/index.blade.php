@@ -15,13 +15,10 @@
                               <th scope="col">#</th>
                               <th scope="col">Nama</th>
                               <th scope="col">Produk</th>
-                              <th scope="col">Jumlah Order</th>
-                              <th scope="col">Total Harga</th>
                               <th scope="col">Tanggal Pengambilan</th>
                               <th scope="col">Tipe Pembayaran</th>
                               <th scope="col">Bukti Pembayaran</th>
                               <th scope="col">Status</th>
-                              <th scope="col">Notes</th>
                               <th><i class="fas fa-gear me-1"></i></th>
                             </tr>
                           </thead>
@@ -31,8 +28,6 @@
                               <td>{{ $loop->iteration }}</td>
                               <td>{{ $dataPesanan->users->name }}</td>
                               <td>{{ $dataPesanan->product->product_name }}</td>
-                              <td>{{ $dataPesanan->order_pcs }}</td>
-                              <td>{{ "Rp".number_format($dataPesanan->price_total,2,',','.') }}</td>
                               <td>{{ date('d M Y \J\a\m H:i', strtotime($dataPesanan->order_time)) }}</td>
                               <td>{{ $dataPesanan->type_of_payment}}</td>
                               <td>
@@ -51,8 +46,8 @@
                                         <span class="badge text-bg-success">Completed</span>
                                     @endif
                                 </td>
-                                <td>{{ $dataPesanan->notes }}</td>
-                              <td><a href="" data-bs-toggle="modal" data-bs-target="#ModalEdit{{ $dataPesanan->id }}" class="btn btn-outline-warning"><i class="fas fa-pencil"></i></a> <a href="" data-bs-toggle="modal" data-bs-target="#ModalDelete{{ $dataPesanan->id }}" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a></td>
+                              <td><a href="" data-bs-toggle="modal" data-bs-target="#ModalView{{ $dataPesanan->id }}" class="btn btn-outline-primary"><i class="fas fa-eye"></i></a> <a href="" data-bs-toggle="modal" data-bs-target="#ModalEdit{{ $dataPesanan->id }}" class="btn btn-outline-warning"><i class="fas fa-pencil"></i></a> <a href="" data-bs-toggle="modal" data-bs-target="#ModalDelete{{ $dataPesanan->id }}" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a></td>
+                              @include('admin.pesanan.view')
                               @include('admin.pesanan.edit')
                               @include('admin.pesanan.delete')
                             </tr>

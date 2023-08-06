@@ -13,9 +13,10 @@
                         <thead>
                             <tr>
                               <th scope="col">#</th>
-                              <th scope="col">Nama</th>
                               <th scope="col">Produk</th>
                               <th scope="col">Jumlah Order</th>
+                              <th scope="col">Merek HP</th>
+                              <th scope="col">Tipe HP</th>
                               <th scope="col">Total Harga</th>
                               <th scope="col">Waktu Pengambilan</th>
                               <th scope="col">Tipe Pembayaran</th>
@@ -28,9 +29,10 @@
                             @foreach ($data as $dataPesanan)
                             <tr>
                               <td>{{ $loop->iteration }}</td>
-                              <td>{{ $dataPesanan->users->name }}</td>
                               <td>{{ $dataPesanan->product->product_name }}</td>
                               <td>{{ $dataPesanan->order_pcs }}</td>
+                              <td>{{ $dataPesanan->merk_hp }}</td>
+                              <td>{{ $dataPesanan->tipe_hp }}</td>
                               <td>{{ "Rp".number_format($dataPesanan->price_total,2,',','.') }}</td>
                               <td>{{ date('d M Y \J\a\m H:i', strtotime($dataPesanan->order_time)) }}</td>
                               <td>{{ $dataPesanan->type_of_payment}}</td>

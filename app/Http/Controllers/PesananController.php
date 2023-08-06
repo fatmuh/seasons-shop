@@ -10,7 +10,7 @@ class PesananController extends Controller
 {
     public function index()
     {
-        $data = Payment::all();
+        $data = Payment::latest()->get();
         return view('admin.pesanan.index', compact('data'));
     }
 

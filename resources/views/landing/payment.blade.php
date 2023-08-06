@@ -35,6 +35,8 @@
                             <input type="hidden" class="form-control" name="product_id" value="{{ $data->id }}">
                             <input type="hidden" class="form-control" name="order_pcs" value="{{ $order_pcs }}">
                             <input type="hidden" class="form-control" name="price_total" value="{{ $total_bayar }}">
+                            <input type="hidden" class="form-control" name="merk_hp" value="{{ $merk_hp }}">
+                            <input type="hidden" class="form-control" name="tipe_hp" value="{{ $tipe_hp }}">
                             <input type="hidden" class="form-control" name="status" value="Pending">
                             <div class="row">
                                 <div class="col-12 mb-3">
@@ -89,6 +91,8 @@
                             <li><span>Product</span> <span>Total</span></li>
                             <li><span>{{ $data->product_name }}</span> <span>{{ "Rp ".number_format($data->price,2,',','.') }}</span></li>
                             <li><span>Jumlah Pembelian : {{ $order_pcs }}</span> <span>{{ "Rp ".number_format($total_bayar,2,',','.') }}</span></li>
+                            <li><span>Merek Smartphone :</span> <span>{{ $merk_hp }}</span></li>
+                            <li><span>Tipe Smartphone :</span> <span>{{ $tipe_hp }}</span></li>
                             <li><span>TRANSFER BCA</span> <span>758-681-823</span></li>
                         </ul>
 

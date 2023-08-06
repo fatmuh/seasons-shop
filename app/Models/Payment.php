@@ -12,6 +12,8 @@ class Payment extends Model
         'users_id',
         'product_id',
         'order_pcs',
+        'merk_hp',
+        'tipe_hp',
         'price_total',
         'order_time',
         'type_of_payment',
